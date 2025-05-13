@@ -1,0 +1,211 @@
+/* src/components/NotificationsPage/NotificationsPage.css */
+.notifications-page {
+    padding: 20px;
+    background-color: var(--main-content-bg-color, #fff);
+    color: var(--main-content-text-color, #333);
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.notifications-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+
+.notifications-header .header-icon {
+    font-size: 2em;
+    margin-right: 15px;
+    color: var(--primary-color, #007bff);
+}
+
+.notifications-header h1 {
+    font-size: 1.8em;
+    margin: 0;
+    color: var(--heading-color, #333);
+}
+
+.loading-container,
+.error-container,
+.no-notifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 200px); /* Adjust based on your layout */
+    text-align: center;
+    color: var(--text-secondary-color, #777);
+    padding: 20px;
+}
+
+.loading-container .spinner-icon {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: spin 1s linear infinite;
+    color: var(--primary-color, #007bff);
+}
+
+.no-notifications svg {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--text-tertiary-color, #ccc);
+}
+
+.notifications-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-item {
+    background-color: var(--card-bg-color, #f9f9f9);
+    border-left: 5px solid var(--info-color, #17a2b8);
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: flex-start;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.notification-item.unread {
+    background-color: var(--unread-bg-color, #eef7ff);
+}
+
+.notification-item.read {
+    opacity: 0.8;
+    background-color: var(--read-bg-color, #f0f0f0);
+}
+
+/* Type-specific border colors */
+.notification-item.info { border-left-color: var(--info-color, #17a2b8); }
+.notification-item.success { border-left-color: var(--success-color, #28a745); }
+.notification-item.warning { border-left-color: var(--warning-color, #ffc107); }
+.notification-item.error { border-left-color: var(--error-color, #dc3545); }
+
+.notification-icon-type {
+    margin-right: 15px;
+    font-size: 1.5em;
+    padding-top: 2px;
+}
+
+/* Type-specific icon colors */
+.notification-icon-type .icon.info { color: var(--info-color, #17a2b8); }
+.notification-icon-type .icon.success { color: var(--success-color, #28a745); }
+.notification-icon-type .icon.warning { color: var(--warning-color, #ffc107); }
+.notification-icon-type .icon.error { color: var(--error-color, #dc3545); }
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-message {
+    margin: 0 0 5px 0;
+    font-weight: 500;
+    color: var(--text-primary-color, #333);
+    white-space: pre-wrap;
+}
+
+.notification-timestamp {
+    font-size: 0.8em;
+    color: var(--text-muted-color, #777);
+    display: block;
+    margin-bottom: 3px;
+}
+.notification-source {
+    font-size: 0.75em;
+    color: var(--text-muted-color, #888);
+    display: block;
+    font-style: italic;
+}
+
+.notification-actions {
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent actions from shrinking */
+}
+
+.notification-actions .action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 8px;
+    font-size: 0.9em;
+    transition: color 0.2s ease;
+}
+.notification-actions .mark-read-btn {
+    color: var(--primary-color, #007bff);
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+.notification-actions .mark-read-btn:hover {
+    color: var(--primary-hover-color, #0056b3);
+}
+
+.notification-actions .delete-btn {
+    color: var(--danger-color, #dc3545);
+    font-size: 1.1em;
+}
+.notification-actions .delete-btn:hover {
+    color: var(--danger-hover-color, #a71d2a);
+}
+
+/* Ensure CSS variables are defined in your main CSS or a theme file,
+   especially if you copied them from the previous Dashboard.css example. */
+:root {
+    /* Light Mode Defaults */
+    --primary-color: #007bff;
+    --primary-hover-color: #0056b3;
+    --danger-color: #dc3545;
+    --danger-hover-color: #c82333;
+    --info-color: #17a2b8;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --error-color: #dc3545;
+
+    --main-content-bg-color: #fff;
+    --main-content-text-color: #333;
+    --card-bg-color: #f9f9f9;
+    --unread-bg-color: #eef7ff;
+    --read-bg-color: #f0f0f0;
+    --border-color: #e0e0e0;
+    --heading-color: #333;
+    --text-primary-color: #333;
+    --text-secondary-color: #777;
+    --text-tertiary-color: #ccc;
+    --text-muted-color: #777;
+}
+
+body.dark-mode {
+    /* Dark Mode Overrides */
+    --main-content-bg-color: #2d3748;
+    --main-content-text-color: #e2e8f0;
+    --card-bg-color: #1e293b;
+    --unread-bg-color: #2c3e50;
+    --read-bg-color: #273343;
+    --border-color: #4a5568;
+    --heading-color: #f7fafc;
+    --text-primary-color: #e2e8f0;
+    --text-secondary-color: #a0aec0;
+    --text-tertiary-color: #718096;
+    --text-muted-color: #a0aec0;
+
+    --primary-color: #4299e1;
+    --primary-hover-color: #2b6cb0;
+    --danger-color: #f56565;
+    --danger-hover-color: #c53030;
+    --info-color: #4fd1c5;
+    --success-color: #48bb78;
+    --warning-color: #f6e05e;
+    --error-color: #f56565;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

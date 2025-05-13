@@ -1,0 +1,179 @@
+
+  /* src/Chat.css */
+/*  */
+.chat-container-animated {
+  display: flex;
+  flex-direction: column;
+  height: 500px; /* Adjust as needed */
+  max-width: 400px; /* Adjust as needed */
+  border: 1px solid #64b5f6; /* Blue border */
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #e3f2fd; /* Light blue background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header-animated {
+  background-color: #1e88e5; /* Slightly darker blue header */
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 2px solid #0d47a1;
+  animation: fadeInDown 0.5s ease-out;
+}
+
+.chat-header-animated h2 {
+  margin: 0;
+  font-size: 1.3em;
+}
+
+.chat-display-animated {
+  flex-grow: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto; /* Keep overflow for longer chats, but no automatic scrolling */
+}
+
+.message-animated {
+  background-color: #bbdefb; /* Lighter blue message */
+  color: #333;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  width: fit-content;
+  max-width: 70%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  position: relative;
+  animation: slideIn 0.3s ease-out forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.message-animated.sent {
+  background-color: #a5d6a7; /* Light green sent message */
+  align-self: flex-end;
+  border-radius: 20px 20px 0 20px;
+}
+
+.message-animated.received {
+  background-color: #e1bee7; /* Light purple received message */
+  align-self: flex-start;
+  border-radius: 0 20px 20px 20px;
+}
+
+.message-text-animated {
+  margin: 0 0 8px 0;
+  word-break: break-word;
+}
+
+.message-time-animated {
+  font-size: 0.75em;
+  color: #777;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+.message-animated.received .message-time-animated {
+  left: 10px;
+  right: auto;
+}
+
+.chat-input-area-animated {
+  display: flex;
+  padding: 15px;
+  border-top: 2px solid #64b5f6;
+  background-color: #f0f8ff; /* Alice blue input area */
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.chat-input-animated {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #64b5f6;
+  border-radius: 8px;
+  margin-right: 10px;
+  font-size: 1em;
+}
+
+.chat-send-button-animated {
+  background-color: #4caf50; /* Green send button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.chat-send-button-animated:hover {
+  background-color: #388e3c;
+}
+
+.chat-close-button-animated {
+  background-color: #f44336; /* Red close button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin: 15px auto;
+  display: block;
+  transition: background-color 0.3s ease;
+  animation: pulse 1.5s infinite alternate;
+}
+
+.chat-close-button-animated:hover {
+  background-color: #d32f2f;
+}
+
+/* Animations */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive adjustments (optional) */
+@media (max-width: 768px) {
+  .chat-container-animated {
+    height: 80vh;
+    max-width: 95%;
+    margin: 10px auto;
+  }
+}

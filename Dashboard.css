@@ -1,0 +1,321 @@
+
+   /* Dashboard.css */
+
+/* Base styles that apply to both light and dark mode */
+body {
+  margin: 0; /* Remove default body margin */
+  font-family: sans-serif; /* Add a default font */
+}
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f5f7; /* Default light background */
+  color: #333; /* Default light text color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mobile-nav {
+  display: none;
+  background-color: #2c3e50; /* Default mobile nav background */
+  color: #fff;
+  padding: 0px 20px;
+  height:60px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Make it fixed at the top on mobile */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+}
+
+.mobile-nav .dashboard-title {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav .dashboard-title .icon {
+  margin-right: 8px;
+}
+
+.mobile-nav .mobile-menu-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 280px;
+  background-color: #2c3e50; /* Default sidebar background */
+  color: #fff; /* Default sidebar text color */
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease, color 0.3s ease;
+  /* transform: translateX(0); */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position:sticky;
+  top: 0; /* Required for sticky positioning */
+  flex-shrink: 0;
+}
+
+.sidebar-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+  flex-shrink:0;
+}
+
+.sidebar-header .sidebar-title {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.6em;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-header .sidebar-title .icon {
+  margin-right: 10px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin:0;
+}
+
+.sidebar-menu .menu-item {
+  margin-bottom: 10px;
+}
+
+.sidebar-menu .menu-category {
+  color: #adb5bd;
+  padding: 8px 0;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding-left: 15px;
+  margin:0;
+}
+
+.sidebar-menu ul li a {
+  display: flex;
+  align-items: center;
+  color: #e2e8f0;
+  text-decoration: none;
+  padding: 10px 5px;
+  font-size: 1em;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius:4px;
+  
+}
+
+.sidebar-menu ul li a .icon {
+  margin-right: 10px;
+  font-size: 1.2em;
+  flex-shrink:0;
+}
+
+.sidebar-menu ul li a:hover {
+  color: #f0ad4e;
+  background-color:rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-menu ul li a.active {
+  background-color: #007bff; /* Active link background */
+  color: white;
+  
+}
+
+.sidebar-menu .theme-toggle,
+.sidebar-menu .logout {
+  margin-top: auto; /* Pushes these items to the bottom */
+  padding-top: 15px; /* Add some space above */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separator */
+}
+
+.sidebar-menu .theme-toggle button,
+.sidebar-menu .logout button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 5px;
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  font-size: 1em;
+  cursor: pointer;
+  transition: color 0.3s ease,background-color 0.3s ease;
+  text-align: left; /* Ensure text aligns left */
+  border-radius: 4px;
+}
+
+.sidebar-menu .theme-toggle button .icon,
+.sidebar-menu .logout button .icon {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.sidebar-menu .logout button:hover{
+  color:#fff;
+  background-color: #d9534f;
+}
+
+.sidebar-menu .theme-toggle button:hover {
+  background-color: #f0ad4e;
+  color: #1e293b;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow: auto;
+  background-color: #fff; /* Default main content background */
+  color: #333; /* Default main content text color */
+  transition: background-color 0.3s ease, color 0.3s ease,margin-left 0.3s ease-in-out;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+body.dark-mode .mobile-nav {
+  background-color: #1a202c;
+}
+
+body.dark-mode .sidebar {
+  background-color: #1a202c;
+  color: #cbd5e0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .sidebar-header {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .sidebar-header .sidebar-title {
+  color: #f7fafc;
+}
+
+body.dark-mode .sidebar-menu .menu-category {
+  color: #718096;
+}
+
+body.dark-mode .sidebar-menu ul li a {
+  color: #e2e8f0;
+}
+
+body.dark-mode .sidebar-menu ul li a:hover {
+  color: #f0ad4e;
+}
+
+body.dark-mode .sidebar-menu ul li a.active {
+  background-color: #0056b3; /* Dark mode active link background */
+  color: #fff;
+}
+
+body.dark-mode .sidebar-menu .theme-toggle button,
+body.dark-mode .sidebar-menu .logout button {
+  color: #cbd5e0;
+}
+body.dark-mode .sidebar-menu .logout button:hover {
+  color: #fff;
+  background-color: #c9302c; /* Darker red for dark mode logout hover */
+}
+
+body.dark-mode .sidebar-menu .theme-toggle button:hover {
+  color: #1a202c; /* Darker text for contrast on hover */
+  background-color: #f0ad4e;
+}
+body.dark-mode .main-content {
+  background-color: #2d3748;
+  color: #e2e8f0;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    transform: translateX(-100%);
+    height: 100vh;
+    z-index: 100;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    padding-top: 60px; /* Add padding to account for mobile-nav if sidebar is under it */
+    box-sizing: border-box;
+  }
+
+  .sidebar.open {
+    transform: translateX(0px);
+  }
+
+  .main-content {
+    padding-top: 80px;
+    width:100%;
+    box-sizing:border-box;
+  }
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99; /* Below sidebar, above main content */
+}
+.overlay.active {
+  display: block;
+}
+
+
+@media (min-width: 769px) {
+  .dashboard-container {
+    flex-direction: row;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .sidebar {
+    /* Sidebar remains visible */
+    position: sticky; /* Or 'fixed' if you prefer, but sticky is often better with flexbox */
+    top: 0;
+    height: 100vh; /* Full height */
+    transform: translateX(0); /* Ensure it's visible */
+    flex-shrink: 0;
+  }
+
+  .main-content {
+    /* Main content expands */
+    flex-grow:1;
+    
+  }
+}

@@ -1,0 +1,607 @@
+
+
+
+/* Import Google Font (Add this link to your public/index.html <head>) */
+/* <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> */
+
+:root {
+  --primary-color: #6a1b9a; /* Deep Purple */
+  --primary-color-dark: #4a148c;
+  --background-color: #f0f2f5; /* Light grey background */
+  --container-bg: #ffffff;
+  --text-color: #333;
+  --text-color-light: #555;
+  --input-border-color: #d9d9d9;
+  --input-focus-border: var(--primary-color);
+  --error-color: #d32f2f;
+  --success-color: #388e3c;
+  --link-color: var(--primary-color);
+  --white: #fff;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --border-radius: 8px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Apply the font */
+  margin: 0;
+  background-color: var(--background-color); /* Use variable */
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  /* Optional: Add a subtle gradient or background pattern */
+   background: linear-gradient(135deg, #e1bee7, #ce93d8); /* Example Gradient */
+   /* background-color: var(--primary-color); */ /* Or solid color */
+}
+
+.login-container {
+  background-color: var(--container-bg);
+  padding: 35px 40px; /* Increase padding */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 420px; /* Slightly wider */
+  position: relative;
+  text-align: center; /* Center header elements */
+  overflow: hidden; /* Ensure content stays within rounded corners */
+}
+
+/* Optional Close Button Styling */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5em; /* Make it larger */
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.2s ease;
+}
+
+.close-button:hover {
+  color: #555;
+}
+
+.login-header {
+  margin-bottom: 25px;
+}
+
+.user-icon {
+  font-size: 3.5em; /* Larger icon */
+  color: var(--primary-color); /* Use primary color */
+  margin-bottom: 10px;
+}
+
+.login-container h2 {
+  margin-bottom: 8px;
+  color: var(--text-color);
+  font-weight: 600; /* Bolder heading */
+  font-size: 1.8em; /* Larger heading */
+}
+
+.login-container p {
+  margin-bottom: 20px;
+  color: var(--text-color-light);
+  font-size: 0.95em;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* Align form elements left */
+}
+
+.input-group {
+  margin-bottom: 20px; /* More space between inputs */
+  position: relative; /* Needed for icon positioning */
+}
+
+/* Style for icons inside input fields */
+/* .input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa; Icon color */
+  /* font-size: 1.1em;
+
+  z-index: 1; Keep icon behind input text area */
+  /* pointer-events: none;
+}
+
+.input-group input[type='email'],
+.input-group input[type='password'],
+.input-group input[type='text'] { Added text type for password toggle */
+  /* width: 100%;
+  padding: 12px 12px 12px 40px; Add left padding for the icon */
+  /* border: 1px solid var(--input-border-color);
+  border-radius: 6px; Slightly less rounded */
+  /* box-sizing: border-box;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; Smooth transition */
+
+  /* position: relative; /* Establish stacking context for input */
+  /* z-index: 1; Ensure input is stacked above the static icon */
+  /* background-color: var(--white);
+} */ 
+
+/* .input-group input::placeholder {
+    color: #aaa; Lighter placeholder text */
+/* }
+
+
+.input-group input:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.15); Subtle glow on focus */
+  /* outline: none; /* Remove default outline */
+/* }  */
+
+/* Password visibility toggle icon */
+/* .password-toggle-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  cursor: pointer;
+  font-size: 1.2em;
+  z-index:2;
+}
+
+.password-toggle-icon:hover {
+  color: var(--text-color-light);
+} */
+
+
+/* .options-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 0.9em;
+  color: var(--text-color-light);
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.remember-me input[type='checkbox'] {
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.forgot-password-link {
+  background: none;
+  border: none;
+  color: var(--link-color);
+  text-decoration: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: inherit; Use same font size as 'Remember me' */
+  /* font-family: inherit; /* Ensure consistent font */
+  /* transition: color 0.2s ease;
+} */ 
+
+/* .forgot-password-link:hover {
+  color: var(--primary-color-dark);
+  text-decoration: underline;
+}
+
+.forgot-password-link:disabled {
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.login-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 500; Slightly bolder button text */
+  /* transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; Make button full width */
+  /* margin-top: 5px; /* Add some space above the button */
+/*} */
+
+/* .login-button:hover {
+  background-color: var(--primary-color-dark);
+  box-shadow: 0 4px 12px rgba(106, 27, 154, 0.2);
+}
+
+.login-button:disabled {
+    background-color: #c7a4d9; Lighter purple when disabled */
+    /* cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+.signup-link {
+  margin-top: 25px;
+  text-align: center;
+  color: var(--text-color-light);
+  font-size: 0.95em;
+}
+
+.signup-link a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+  color: var(--primary-color-dark);
+} */
+
+/* Error and Success Message Styling */
+/* .message-base {
+    padding: 10px 15px;
+    margin: 15px 0 5px 0; Adjust margin */
+    /* border-radius: 4px;
+    font-size: 0.9em;
+    text-align: center; Center text within the message box */
+/* }
+
+.error-message {
+    @extend .message-base; Inherit base styles if using SASS/SCSS */
+    /* Manual duplication for plain CSS: */
+    /* padding: 10px 15px;
+    margin: 15px 0 5px 0;
+    border-radius: 4px;
+    font-size: 0.9em;
+    text-align: center; */
+    /* Specific error styles: */
+    /* color: var(--error-color);
+    background-color: #ffebee; /* Light red background */
+    /* border: 1px solid #ef9a9a; Lighter red border */
+/*} */
+
+/* .success-message {
+    @extend .message-base; Inherit base styles if using SASS/SCSS */
+    /* Manual duplication for plain CSS: */
+    /* padding: 10px 15px;
+    margin: 15px 0 5px 0;
+    border-radius: 4px;
+    font-size: 0.9em;
+    text-align: center; */
+    /* Specific success styles: */
+    /* color: var(--success-color);
+    background-color: #e8f5e9; Light green background */
+    /* border: 1px solid #a5d6a7; /* Lighter green border */
+/*} */
+
+
+/* Add basic responsiveness */
+/* @media (max-width: 480px) {
+    .login-container {
+        padding: 25px 20px; Reduce padding on small screens */
+    /* }
+
+    .login-container h2 {
+        font-size: 1.6em;
+    }
+
+    .user-icon {
+        font-size: 3em;
+    }
+
+    .options-group {
+        flex-direction: column; Stack remember me and forgot password */
+        /* align-items: flex-start; */
+        /* gap: 10px; /* Add space between stacked items */
+    /*} */
+
+    /* .forgot-password-link {
+        align-self: flex-start; Align link to the start when stacked */
+    /* }
+} */
+
+/* LoginPage.css */
+
+:root {
+  --primary-color: #833daf; /* Deep Purple */
+  --primary-color-dark: #4a148c;
+  --background-color: #f0f2f5; /* Light grey background */
+  --container-bg: #ffffff;
+  --text-color: #333;
+  --text-color-light: #555;
+  --input-border-color: #d9d9d9;
+  --input-focus-border: var(--primary-color);
+  --error-color: #d32f2f;
+  --success-color: #388e3c;
+  --link-color: var(--primary-color);
+  --white: #fff;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --border-radius: 8px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Apply the font */
+  margin: 0;
+  background-color: var(--background-color); /* Use variable */
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #91bbdc, #91bbdc);
+}
+
+.login-container {
+  background-color: var(--container-bg);
+  padding: 35px 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.2s ease;
+
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0;
+  z-index: 10;
+}
+
+.close-button:hover {
+  color: #555;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.login-header {
+  margin-bottom: 25px;
+}
+
+.user-icon {
+  font-size: 3.5em;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.login-container h2 {
+  margin-bottom: 8px;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.8em;
+}
+
+.login-container p {
+  margin-bottom: 20px;
+  color: var(--text-color-light);
+  font-size: 0.95em;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  position: relative; /* Needed for icon absolute positioning */
+}
+
+/* Style for icons inside input fields */
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 1.1em;
+  pointer-events: none; /* Prevent icon from interfering with clicks/selection */
+  /* NO z-index needed here, let it follow normal flow */
+}
+
+.input-group input[type='email'],
+.input-group input[type='password'],
+.input-group input[type='text'] {
+  width: 100%;
+  /* This padding is key: 40px on left makes space for icon */
+  padding: 12px 12px 12px 40px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--white); /* Ensure background is opaque */
+  /* REMOVED position: relative and z-index */
+}
+
+
+.input-group input::placeholder {
+    color: #aaa;
+}
+
+
+.input-group input:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.15);
+  outline: none;
+}
+
+/* Password visibility toggle icon */
+.password-toggle-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  cursor: pointer;
+  font-size: 1.2em;
+  z-index: 2; /* Keep this high to ensure it's clickable above the input */
+}
+
+.password-toggle-icon:hover {
+  color: var(--text-color-light);
+}
+
+
+.options-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 0.9em;
+  color: var(--text-color-light);
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.remember-me input[type='checkbox'] {
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.forgot-password-link {
+  background: none;
+  border: none;
+  color: var(--link-color);
+  text-decoration: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  transition: color 0.2s ease;
+}
+
+.forgot-password-link:hover {
+  color: var(--primary-color-dark);
+  text-decoration: underline;
+}
+
+.forgot-password-link:disabled {
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.login-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.login-button:hover {
+  background-color: var(--primary-color-dark);
+  box-shadow: 0 4px 12px rgba(106, 27, 154, 0.2);
+}
+
+.login-button:disabled {
+    background-color: #73a6da;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+.signup-link {
+  margin-top: 25px;
+  text-align: center;
+  color: var(--text-color-light);
+  font-size: 0.95em;
+}
+
+.signup-link a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+  color: var(--primary-color-dark);
+}
+
+/* Error and Success Message Styling */
+/* Base class simulation for plain CSS */
+.error-message,
+.success-message {
+    padding: 10px 15px;
+    margin: 15px 0 5px 0;
+    border-radius: 4px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.error-message {
+    color: var(--error-color);
+    background-color: #ffebee;
+    border: 1px solid #ef9a9a;
+}
+
+.success-message {
+    color: var(--success-color);
+    background-color: #e8f5e9;
+    border: 1px solid #a5d6a7;
+}
+
+
+/* Add basic responsiveness */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 25px 20px;
+    }
+
+    .login-container h2 {
+        font-size: 1.6em;
+    }
+
+    .user-icon {
+        font-size: 3em;
+    }
+
+    .options-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .forgot-password-link {
+        align-self: flex-start;
+    }
+}

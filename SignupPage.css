@@ -1,0 +1,178 @@
+
+
+  /* General Page Styles */
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #926cd3; /* A nice modern purple - adjust as you like */
+  font-family: 'Arial', sans-serif; /* Or your preferred font */
+  padding: 20px; /* Add some padding for smaller screens */
+  box-sizing: border-box;
+}
+
+.signup-container {
+  background-color: #ffffff;
+  padding: 30px 40px; /* Increased padding */
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  width: 100%;
+  max-width: 420px; /* Max width for the container */
+  position: relative;
+  text-align: center; /* Center align header text */
+}
+
+.close-button {
+  position: absolute;
+  top: 15px; /* Adjusted position */
+  right: 15px; /* Adjusted position */
+  background: transparent;
+  border: none;
+  font-size: 1.8em; /* Larger for easier clicking */
+  font-weight: lighter;
+  cursor: pointer;
+  color: #adb5bd; /* Light grey color */
+  padding: 5px;
+  line-height: 1;
+}
+.close-button:hover {
+  color: #495057; /* Darker on hover */
+}
+
+
+.signup-header {
+  margin-bottom: 25px;
+}
+
+.signup-header h2 {
+  font-size: 1.8em; /* Slightly larger title */
+  color: #343a40; /* Darker heading color */
+  margin-bottom: 8px;
+}
+
+.signup-header p {
+  font-size: 0.95em;
+  color: #6c757d; /* Softer text color */
+  margin-bottom: 20px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Key changes for input fields with icons */
+.input-group {
+  position: relative; /* Crucial for icon positioning */
+  margin-bottom: 20px; /* Increased spacing */
+}
+
+.input-group .input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px; /* Adjust as needed for padding */
+  transform: translateY(-50%);
+  color: #adb5bd; /* Icon color */
+  font-size: 1em; /* Adjust icon size */
+}
+
+.input-group input[type='text'],
+.input-group input[type='email'],
+.input-group input[type='password'] {
+  width: 100%;
+  padding: 12px 15px 12px 45px; /* Top/Right/Bottom/Left - Left padding to make space for the icon */
+  border: 1px solid #ced4da; /* Standard border color */
+  border-radius: 8px; /* More rounded inputs */
+  box-sizing: border-box;
+  font-size: 1em;
+  color: #495057; /* Input text color */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.input-group input[type='text']:focus,
+.input-group input[type='email']:focus,
+.input-group input[type='password']:focus {
+  border-color: #7c3aed; /* Highlight color on focus */
+  box-shadow: 0 0 0 0.2rem rgba(124, 58, 237, 0.25); /* Glow effect on focus */
+  outline: none;
+}
+
+.input-group input[type='text']::placeholder,
+.input-group input[type='email']::placeholder,
+.input-group input[type='password']::placeholder {
+  color: #adb5bd; /* Placeholder text color */
+}
+
+
+/* Password toggle icon */
+.password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px; /* Adjust as needed */
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #adb5bd; /* Icon color */
+  font-size: 1.1em; /* Adjust icon size */
+}
+.password-toggle-icon:hover {
+  color: #495057; /* Darker on hover */
+}
+
+
+.error-message {
+  color: #dc3545; /* Bootstrap's danger color */
+  background-color: #f8d7da; /* Light red background */
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  text-align: left; /* Align error text to the left */
+}
+
+.signup-button {
+  background-color: #7c3aed; /* Main theme color */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+  width: 100%; /* Make button full width */
+  margin-top: 10px; /* Add some space above the button */
+}
+
+.signup-button:hover {
+  background-color: #6d28d9; /* Darker shade on hover */
+}
+
+.signup-button:disabled {
+  background-color: #c7d2fe; /* Lighter color when disabled */
+  cursor: not-allowed;
+}
+
+.login-link {
+  margin-top: 25px; /* More space above login link */
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.login-link a {
+  color: #8046e3; /* Theme color for the link */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Optional: Add styles for the overall header icon if you decide to use one */
+/* .user-icon {
+  font-size: 3em;
+  color: #7c3aed;
+  margin-bottom: 15px;
+} */

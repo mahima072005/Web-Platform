@@ -1,0 +1,153 @@
+
+
+.sensor-management-container-pro {
+  padding: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8; /* Light background */
+}
+
+.monitor-header {
+  background-color: #e0f7fa; /* Very light cyan */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.monitor-header h2 {
+  color: #263238; /* Dark grey */
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.monitor-header p {
+  color: #546e7a; /* Greyish blue */
+  margin-bottom: 5px;
+  font-size: 0.95em;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.data-card {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.card-header h3 {
+  color: #37474f; /* Dark greyish blue */
+  margin-right: 10px;
+  font-size: 1.4em;
+}
+
+.card-header .icon {
+  font-size: 1.6em;
+  color: #78909c; /* Light greyish blue */
+}
+
+.data-value-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.data-value {
+  font-size: 2.8em;
+  font-weight: bold;
+  color: #263238; /* Dark grey */
+}
+
+.unit {
+  font-size: 1.2em;
+  color: #546e7a; /* Greyish blue */
+  margin-left: 8px;
+}
+
+.trend-icon {
+  font-size: 1.2em;
+  margin-left: 8px;
+}
+
+.trend-icon.up {
+  color: #4caf50; /* Green for increasing */
+}
+
+.trend-icon.down {
+  color: #f44336; /* Red for decreasing */
+}
+
+.status {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #546e7a; /* Greyish blue */
+}
+
+.status.normal {
+  color: #4caf50; /* Green */
+}
+
+.status.high {
+  color: #f44336; /* Red */
+}
+
+.status.low {
+  color: #2196f3; /* Blue */
+}
+
+.threshold-info {
+  display: flex;
+  gap: 15px;
+  color: #78909c; /* Light greyish blue */
+  font-size: 0.9em;
+}
+
+/* Specific coloring for Temperature card */
+.temperature.normal .card-header .icon,
+.temperature.normal .data-value {
+  color: #4caf50; /* Green */
+}
+
+.temperature.high .card-header .icon,
+.temperature.high .data-value {
+  color: #f44336; /* Red */
+}
+
+.temperature.low .card-header .icon,
+.temperature.low .data-value {
+  color: #2196f3; /* Blue */
+}
+
+/* Specific coloring for AQI card */
+.aqi.normal .card-header .icon,
+.aqi.normal .data-value {
+  color: #4caf50; /* Green */
+}
+
+.aqi.high .card-header .icon,
+.aqi.high .data-value {
+  color: #f44336; /* Red */
+}
+
+.aqi.low .card-header .icon,
+.aqi.low .data-value {
+  color: #2196f3; /* Blue */
+}
